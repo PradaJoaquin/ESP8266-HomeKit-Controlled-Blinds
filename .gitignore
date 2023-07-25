@@ -1,0 +1,2 @@
+# To prevent uploading wifi credentials to github, this file is not tracked by git.
+automatic_blinds/wifi_info.h
