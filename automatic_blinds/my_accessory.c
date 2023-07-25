@@ -12,7 +12,7 @@ homekit_accessory_t *accessories[] = {
     HOMEKIT_ACCESSORY(.id=1, .category=homekit_accessory_category_switch, .services=(homekit_service_t*[]) {
         HOMEKIT_SERVICE(ACCESSORY_INFORMATION, .characteristics=(homekit_characteristic_t*[]) {
           
-            HOMEKIT_CHARACTERISTIC(NAME, "Persiana"),
+            HOMEKIT_CHARACTERISTIC(NAME, "Blind"),
             HOMEKIT_CHARACTERISTIC(MANUFACTURER, "Arduino/NodeMCU HomeKit"),
             HOMEKIT_CHARACTERISTIC(SERIAL_NUMBER, "12341234"),
             HOMEKIT_CHARACTERISTIC(MODEL, "ESP8266"),
