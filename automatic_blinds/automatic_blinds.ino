@@ -5,9 +5,10 @@
 #define LOG_D(fmt, ...)   printf_P(PSTR(fmt "\n") , ##__VA_ARGS__);
 
 void setup() {
-	Serial.begin(115200);
+	Serial.begin(9600); // Modify to the bps of your device
 	wifi_connect();
 	my_homekit_setup();
+  // homekit_storage_reset(); // Uncomment this if you want to reset the device. As for pairing from another phone.
 }
 
 void loop() {
