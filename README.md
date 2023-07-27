@@ -18,6 +18,23 @@ El siguiente diagrama muestra las conexiones electricas:
 # Edición del Código
 1. Dentro del archivo [wifi_info.h](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/wifi_info.h) cambiar la variable **ssid** por el nombre del wifi y la variable **password** por la contraseña del wifi.
 
+# Recommended settings in IDE
+- Module: Generic ESP8266 Module (to enable full settings)
+- FlashSize: at least 470KB for sketch (see WolfSSL section if you want a smaller sketch)
+- LwIP Variant: v2 Lower Memory (for lower memory use)
+- Debug Level: None (for lower memory use)
+- Espressif FW: nonos-sdk 2.2.1+119(191122) (which I used to build this project)
+- SSL Support: Basic SSL ciphers (lower ROM use)
+- VTables: Flash (does not matter maybe)
+- Erase Flash: select All Flash Contents when you first upload
+- CPU Frequency: 160MHz (must)
+
+# IMPORTANTE
+Se Usa el [FORK de paullj1](https://github.com/paullj1/Arduino-HomeKit-ESP8266) del [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con sus cambios hasta el
+26/7/2023 (fecha al escribir esto) y juntando el Pull Request [Corrected pairing address for resets ](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2) a ese fork, me funciona.
+
+Si en un futuro actualizan el repositorio original, que por ahora parece deprecado, esto ya no importa. Al dia de hoy sin estos cambios no anda. 
+
 # Gracias
 - [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266)
 - [Arduino-ide](https://github.com/arduino/arduino-ide)
