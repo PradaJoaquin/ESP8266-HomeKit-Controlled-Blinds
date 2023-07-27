@@ -17,7 +17,7 @@ El siguiente diagrama muestra las conexiones electricas:
 
 # Edición del Código
 1. Dentro del archivo [wifi_info.h](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/wifi_info.h) cambiar la variable **ssid** por el nombre del wifi y la variable **password** por la contraseña del wifi.
-2. Modifique el `Serial.begin(9600);` dentro de [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino) con los BPS que usa su dispositivo, en el caso del NodeMCU ESP8266 este viene escrito es la parte trasera.
+2. Modifique el `Serial.begin(9600)` dentro de [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino) con los BPS que usa su dispositivo, en el caso del NodeMCU ESP8266 este viene escrito es la parte trasera.
 
 # Recommended settings in IDE
 - Module: Generic ESP8266 Module (to enable full settings)
