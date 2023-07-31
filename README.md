@@ -13,7 +13,7 @@ El siguiente diagrama muestra las conexiones electricas:
 1. Descargar e instalar el [IDE de Arduino](https://www.arduino.cc/en/software).
 2. Agregar el ESP8266 al Boards Manager del IDE, en Preferences/Additional-Boards-Manager-URLs. Pegando el siguiente link: *http://arduino.esp8266.com/stable/package_esp8266com_index.json*.
 3. Descargar el ESP8266 desde el Boards Manager del IDE, en Tools/Board/Boards-Manager buscando ESP8266 e instalando la última version.
-4. Descargar la Library [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), e instalarla desde el IDE en Sketch/IncludeLibrary y seleccionando el .zip del repositorio descargado. Ir a la sección: [IMPORTANTE](#importante), por si no funciona con la library original.
+4. Descargar la Library [Arduino-HomeKit-ESP8266](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266), e instalarla desde el IDE en Sketch/IncludeLibrary y seleccionando el .zip del repositorio descargado. Para una explicación de porque se usa el fork ir a la sección: [Aclaración](#aclaración).
 
 # Edición del Código
 1. Dentro del archivo [wifi_info.h](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/wifi_info.h) cambiar la variable **ssid** por el nombre del wifi y la variable **password** por la contraseña del wifi.
@@ -30,11 +30,10 @@ El siguiente diagrama muestra las conexiones electricas:
 - Erase Flash: select All Flash Contents when you first upload
 - CPU Frequency: 160MHz (must)
 
-# IMPORTANTE
-Se Usa el [FORK de paullj1](https://github.com/paullj1/Arduino-HomeKit-ESP8266) del [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con sus cambios hasta el
-26/7/2023 (fecha al escribir esto) y juntando el Pull Request [Corrected pairing address for resets ](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2) a ese fork, me funciona.
+# Aclaración
+Se usa un [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) de la library original [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con los cambios propuestos en [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) y juntandolo con el cambio [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), está funcionando. 
 
-Si en un futuro actualizan el repositorio original, que por ahora parece deprecado, esto ya no importa. Al dia de hoy sin estos cambios no anda. 
+Si en un futuro actualizan el repositorio original, que por ahora parece deprecado, esto ya no importa. Al dia de hoy 26/7/2023 sin estos cambios no anda.
 
 # Gracias
 - [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266)
