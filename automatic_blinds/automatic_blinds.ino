@@ -85,21 +85,25 @@ void blind_motor_off() {
 }
 
 void physical_switch_loop() {
-  if (digitalRead(PIN_PHYSICAL_SWITCH_UP) == HIGH && !is_physical_switch_in_control) {
-    LOG_D("Physical Switch: UP");
-    is_physical_switch_in_control = true;
-    blind_motor_up();
+  if (digitalRead(PIN_PHYSICAL_SWITCH_UP) == HIGH) {
+    if (!is_physical_switch_in_control) {
+      LOG_D("Physical Switch: UP");
+      is_physical_switch_in_control = true;
+      blind_motor_up(); 
+    }
   }
-  else if (digitalRead(PIN_PHYSICAL_SWITCH_DOWN) == HIGH && !is_physical_switch_in_control) {
-    LOG_D("Physical Switch: DOWN");
-    is_physical_switch_in_control = true;
-    blind_motor_down();
+  else if (digitalRead(PIN_PHYSICAL_SWITCH_DOWN) == HIGH) {
+    if (!is_physical_switch_in_control) {
+      LOG_D("Physical Switch: DOWN");
+      is_physical_switch_in_control = true;
+      blind_motor_down();
+    }
   }
   else {
     if (is_physical_switch_in_control) {
       LOG_D("Physical Switch: NEUTRAL");
-      is_physical_switch_in_control = false;
       blind_motor_off();
+      is_physical_switch_in_control = false;
     }
   }
 }
