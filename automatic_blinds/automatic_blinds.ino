@@ -17,6 +17,7 @@ void loop() {
 	my_homekit_loop();
 	delay(10);
 }
+
 extern "C" homekit_server_config_t config;
 extern "C" homekit_characteristic_t cha_switch_on;
 
@@ -43,18 +44,12 @@ void my_homekit_setup() {
 	arduino_homekit_setup(&config);
 }
 
-bool is_physical_switch_on_neutral() {
-  return digitalRead(PIN_PHYSICAL_SWITCH_UP) == LOW && digitalRead(PIN_PHYSICAL_SWITCH_DOWN) == LOW;
-}
-
 void cha_switch_on_setter(const homekit_value_t value) {
-  if (!is_physical_switch_on_neutral()) {
+  if (!is_physical_switch_in_control) {
     // We always prioritize the physical switch over the homekit switch.
-    LOG_D("Physical Switch is ON, change the position of the physical switch to neutral to use the homekit switch.");
+    LOG_D("Physical Switch is in control, change the position of the physical switch to neutral to use the homekit switch.");
     return;
   }
-  is_physical_switch_in_control = false;
-
   bool on = value.bool_value;
 	cha_switch_on.value.bool_value = on;
 
