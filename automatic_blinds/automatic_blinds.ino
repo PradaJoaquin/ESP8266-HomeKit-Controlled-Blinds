@@ -24,10 +24,10 @@ extern "C" homekit_characteristic_t cha_switch_on;
 static uint32_t next_heap_millis = 0;
 static bool is_physical_switch_in_control = false;
 
-#define PIN_BLIND_MOTOR_DOWN D0       // Tells the blind motor to go down
-#define PIN_BLIND_MOTOR_UP D2         // Tells the blind motor to go up
-#define PIN_PHYSICAL_SWITCH_UP D6     // Is LOW when the physical switch is UP
-#define PIN_PHYSICAL_SWITCH_DOWN D8   // Is LOW when the physical switch is DOWN
+#define PIN_BLIND_MOTOR_DOWN 16       // Tells the blind motor to go down (D0)
+#define PIN_BLIND_MOTOR_UP 4          // Tells the blind motor to go up (D2)
+#define PIN_PHYSICAL_SWITCH_UP 12     // Is LOW when the physical switch is UP (D6)
+#define PIN_PHYSICAL_SWITCH_DOWN 15   // Is LOW when the physical switch is DOWN (D8)
 
 void pin_setup() {
   pinMode(PIN_BLIND_MOTOR_DOWN, OUTPUT);
