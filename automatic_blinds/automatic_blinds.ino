@@ -26,8 +26,8 @@ static bool is_physical_switch_in_control = false;
 
 #define PIN_BLIND_MOTOR_DOWN D0       // Tells the blind motor to go down
 #define PIN_BLIND_MOTOR_UP D2         // Tells the blind motor to go up
-#define PIN_PHYSICAL_SWITCH_UP D6     // Turns ON when the physical switch is UP
-#define PIN_PHYSICAL_SWITCH_DOWN D8   // Turns ON when the physical switch is DOWN
+#define PIN_PHYSICAL_SWITCH_UP D6     // Is LOW when the physical switch is UP
+#define PIN_PHYSICAL_SWITCH_DOWN D8   // Is LOW when the physical switch is DOWN
 
 void pin_setup() {
   pinMode(PIN_BLIND_MOTOR_DOWN, OUTPUT);
@@ -80,14 +80,14 @@ void blind_motor_off() {
 }
 
 void physical_switch_loop() {
-  if (digitalRead(PIN_PHYSICAL_SWITCH_UP) == HIGH) {
+  if (digitalRead(PIN_PHYSICAL_SWITCH_UP) == LOW) {
     if (!is_physical_switch_in_control) {
       LOG_D("Physical Switch: UP");
       is_physical_switch_in_control = true;
       blind_motor_up(); 
     }
   }
-  else if (digitalRead(PIN_PHYSICAL_SWITCH_DOWN) == HIGH) {
+  else if (digitalRead(PIN_PHYSICAL_SWITCH_DOWN) == LOW) {
     if (!is_physical_switch_in_control) {
       LOG_D("Physical Switch: DOWN");
       is_physical_switch_in_control = true;
