@@ -7,7 +7,7 @@ El objetivo del proyecto es poder controlar una persiana electrica desde un Ipho
 
 El siguiente diagrama muestra las conexiones electricas:
 
-![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/d3c16e67-620a-412f-8215-a3811f8034fc)
+![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/c84804c1-1167-4fa1-869e-b203b0350bf8)
 
 # Instalación
 1. Descargar e instalar el [IDE de Arduino](https://www.arduino.cc/en/software).
