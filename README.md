@@ -11,8 +11,8 @@ El siguiente diagrama muestra las conexiones electricas:
 
 # Configuración
 Los pines logicos utilizados en el **NodeMCU ESP8266** son:
-- **D1** (GPIO5) funcionando como *output* y que activa y desactiva el relay para que la persiana baje.
-- **D2** (GPIO4) funcionando como *output* y que activa y desactiva el relay para que la persiana suba.
+- **D1** (GPIO5) funcionando como *OUTPUT* y que activa y desactiva el relay para que la persiana baje.
+- **D2** (GPIO4) funcionando como *OUTPUT* y que activa y desactiva el relay para que la persiana suba.
 - **D6** (GPIO12) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia arriba.
 - **D7** (GPIO13) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia abajo.
 
