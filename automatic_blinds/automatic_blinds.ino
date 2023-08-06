@@ -9,7 +9,7 @@ void setup() {
 	wifi_connect();
 	my_homekit_setup();
   pin_setup();
-  // homekit_storage_reset(); // Uncomment this if you want to reset the device. As for pairing from another phone.
+  homekit_storage_reset(); // Uncomment this if you want to reset the device. As for pairing from another phone.
 }
 
 void loop() {
@@ -35,8 +35,10 @@ void pin_setup() {
   pinMode(PIN_PHYSICAL_SWITCH_UP, INPUT_PULLUP);
   pinMode(PIN_PHYSICAL_SWITCH_DOWN, INPUT_PULLUP);
   
-	digitalWrite(PIN_BLIND_MOTOR_DOWN, LOW); // TODO: Revisar si el LOW enciende la conexión y hay que invertirlo cambiandolo con un HIGH.
-  digitalWrite(PIN_BLIND_MOTOR_UP, LOW); // TODO: Revisar si el LOW enciende la conexión y hay que invertirlo cambiandolo con un HIGH.
+  blind_motor_off();
+
+	digitalWrite(PIN_BLIND_MOTOR_DOWN, HIGH);
+  digitalWrite(PIN_BLIND_MOTOR_UP, HIGH);
 }
 
 void my_homekit_setup() {
@@ -45,7 +47,7 @@ void my_homekit_setup() {
 }
 
 void cha_switch_on_setter(const homekit_value_t value) {
-  if (!is_physical_switch_in_control) {
+  if (is_physical_switch_in_control) {
     // We always prioritize the physical switch over the homekit switch.
     LOG_D("Physical Switch is in control, change the position of the physical switch to neutral to use the homekit switch.");
     return;
@@ -63,20 +65,23 @@ void cha_switch_on_setter(const homekit_value_t value) {
 }
 
 void blind_motor_up() {
-  digitalWrite(PIN_BLIND_MOTOR_DOWN, LOW);
-  delay(50);  // To make sure the other pin is LOW before chaging the other to HIGH.
-  digitalWrite(PIN_BLIND_MOTOR_UP, HIGH);
+  // Invert this and all other digitalWrites to the relay if yours activates with HIGH intead of LOW.
+  digitalWrite(PIN_BLIND_MOTOR_DOWN, HIGH);
+  delay(50);  // To make sure the other pin is OFF before chaging the other.
+  digitalWrite(PIN_BLIND_MOTOR_UP, LOW);
 }
 
 void blind_motor_down() {
-  digitalWrite(PIN_BLIND_MOTOR_UP, LOW);
-  delay(50);  // To make sure the other pin is LOW before chaging the other to HIGH.
-  digitalWrite(PIN_BLIND_MOTOR_DOWN, HIGH);
+  // Invert this and all other digitalWrites to the relay if yours activates with HIGH intead of LOW.
+  digitalWrite(PIN_BLIND_MOTOR_UP, HIGH);
+  delay(50);  // To make sure the other pin is OFF before chaging the other.
+  digitalWrite(PIN_BLIND_MOTOR_DOWN, LOW);
 }
 
 void blind_motor_off() {
-  digitalWrite(PIN_BLIND_MOTOR_UP, LOW);
-  digitalWrite(PIN_BLIND_MOTOR_DOWN, LOW);
+  // Invert this and all other digitalWrites to the relay if yours activates with HIGH intead of LOW.
+  digitalWrite(PIN_BLIND_MOTOR_UP, HIGH);
+  digitalWrite(PIN_BLIND_MOTOR_DOWN, HIGH);
 }
 
 void physical_switch_loop() {
