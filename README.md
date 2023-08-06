@@ -3,7 +3,7 @@
 Este proyecto usa un **NodeMCU ESP8266** y **Apple HomeKit** para controlar una persiana electrica.
 
 # Motivación
-El objetivo del proyecto es poder controlar una persiana electrica desde un Iphone a través de HomeKit. Pero ademas manteniendo el uso manual de la persiana con su viejo interruptor.
+El objetivo del proyecto es poder controlar una persiana electrica a través de HomeKit. Pero ademas manteniendo el uso manual de la persiana con su viejo interruptor.
 
 El siguiente diagrama muestra las conexiones electricas:
 
