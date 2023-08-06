@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  // physical_switch_loop();
+  physical_switch_loop();
 	my_homekit_loop();
 	delay(10);
 }
