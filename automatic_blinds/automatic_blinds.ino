@@ -9,11 +9,11 @@ void setup() {
 	wifi_connect();
 	my_homekit_setup();
   pin_setup();
-  homekit_storage_reset(); // Uncomment this if you want to reset the device. As for pairing from another phone.
+  // homekit_storage_reset(); // Uncomment this if you want to reset the device. As for pairing from another phone.
 }
 
 void loop() {
-  physical_switch_loop();
+  // physical_switch_loop();
 	my_homekit_loop();
 	delay(10);
 }
@@ -36,9 +36,6 @@ void pin_setup() {
   pinMode(PIN_PHYSICAL_SWITCH_DOWN, INPUT_PULLUP);
   
   blind_motor_off();
-
-	digitalWrite(PIN_BLIND_MOTOR_DOWN, HIGH);
-  digitalWrite(PIN_BLIND_MOTOR_UP, HIGH);
 }
 
 void my_homekit_setup() {
