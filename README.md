@@ -7,7 +7,7 @@ El objetivo del proyecto es poder controlar una persiana electrica a través de 
 
 El siguiente diagrama muestra las conexiones electricas:
 
-![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/c84804c1-1167-4fa1-869e-b203b0350bf8)
+![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/8a106cd5-d9b8-4e31-9b24-ae49c9776df9)
 
 # Instalación
 1. Descargar e instalar el [ch340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa.
