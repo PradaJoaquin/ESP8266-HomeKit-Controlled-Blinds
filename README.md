@@ -9,6 +9,13 @@ El siguiente diagrama muestra las conexiones electricas:
 
 ![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/8a106cd5-d9b8-4e31-9b24-ae49c9776df9)
 
+# Configuración
+Los pines logicos utilizados en el **NodeMCU ESP8266** son:
+- **D1** (GPIO5) funcionando como *output* y que activa y desactiva el relay para que la persiana baje.
+- **D2** (GPIO4) funcionando como *output* y que activa y desactiva el relay para que la persiana suba.
+- **D6** (GPIO12) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia arriba.
+- **D7** (GPIO13) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia abajo.
+
 # Instalación
 1. Descargar e instalar el [ch340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa.
 2. Descargar e instalar el [IDE de Arduino](https://www.arduino.cc/en/software).
@@ -36,6 +43,10 @@ El siguiente diagrama muestra las conexiones electricas:
 Se usa un [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) de la library original [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con los cambios propuestos en [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) y juntandolo con el cambio [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), está funcionando. 
 
 Si en un futuro actualizan el repositorio original, que por ahora parece deprecado, esto ya no importa. Al dia de hoy 26/7/2023 sin estos cambios no anda.
+
+# Bibliografía útil
+- Para saber que pines se pueden utilizar en el NodeMCU ESP8266: [link](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/).
+- Para más información de como funciona el *INPUT_PULLUP*: [link](https://aprendiendoarduino.wordpress.com/tag/input-pullup/).
 
 # Gracias
 - [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266)
