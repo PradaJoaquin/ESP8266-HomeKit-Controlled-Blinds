@@ -6,9 +6,9 @@ Este proyecto usa un **NodeMCU ESP8266** y **Apple HomeKit** para controlar una 
 El objetivo del proyecto es poder controlar una persiana electrica a través de HomeKit, pero ademas manteniendo el uso manual de la persiana con su viejo interruptor. Todo esto con el menor presupuesto posible.
 
 Los componentes utilizados fueron:
-- Placa Nodemcu Wifi Esp8266.
+- Board Nodemcu Wifi Esp8266.
 - 2 Channel Relay Module (Songle).
-- Fuente AC (220v) a 5v Power Supply.
+- AC (220v) a 5v Power Supply.
 - Cables hembra-hembra y cables de 1 mm para las conexiones.
 
 El siguiente diagrama muestra las conexiones electricas:
@@ -34,16 +34,11 @@ Los pines logicos utilizados en el **NodeMCU ESP8266** son:
 2. Modifique el `Serial.begin(9600)` dentro de [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino) con los BPS que usa su dispositivo, en el caso del NodeMCU ESP8266 este viene escrito es la parte trasera.
 3. Tal vez sea necesario invertir las señales enviadas a los relays para su correcto funcionamiento, en mi caso el relay se activa al enviarle una señal LOW, con otros relays puede ser al revés. Si es necesario se deberían modificar las funciones que interactuan con el motor, como `blind_motor_off()` dentro de [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino).
 
-## Recommended settings in IDE
-- Module: Generic ESP8266 Module (to enable full settings)
-- FlashSize: at least 470KB for sketch (see WolfSSL section if you want a smaller sketch)
-- LwIP Variant: v2 Lower Memory (for lower memory use)
-- Debug Level: None (for lower memory use)
-- Espressif FW: nonos-sdk 2.2.1+119(191122) (which I used to build this project)
+## Settings importantes para modificar en el Arduino IDE
+- CPU Frequency: 160MHz (Obligatorio)
+- Board/Module: Generic ESP8266 Module
+- Erase Flash: Only Sketch (Idealmente seleccionar *All Flash Contents* cuando se sube el código por primera vez)
 - SSL Support: Basic SSL ciphers (lower ROM use)
-- VTables: Flash (does not matter maybe)
-- Erase Flash: select All Flash Contents when you first upload
-- CPU Frequency: 160MHz (must)
 
 ## Aclaración
 Se usa un [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) de la library original [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con los cambios propuestos en [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) y juntandolo con el cambio [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), está funcionando. 
@@ -54,6 +49,6 @@ Si en un futuro actualizan el repositorio original, que por ahora parece depreca
 - [Para saber que pines se pueden utilizar en el NodeMCU ESP8266](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/).
 - [Para más información de como funciona el *INPUT_PULLUP*](https://aprendiendoarduino.wordpress.com/tag/input-pullup/).
 
-## Gracias
+## Agradecimientos
 - [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266)
 - [Arduino-ide](https://github.com/arduino/arduino-ide)
