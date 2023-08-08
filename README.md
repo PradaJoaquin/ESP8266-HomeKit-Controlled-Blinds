@@ -1,54 +1,55 @@
 # ESP8266-HomeKit-Controlled-Blinds
 
-Este proyecto usa un **NodeMCU ESP8266** y **Apple HomeKit** para controlar una persiana electrica.
+[README Español](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/README-es.md)
 
-## Motivación
-El objetivo del proyecto es poder controlar una persiana electrica a través de HomeKit, pero ademas manteniendo el uso manual de la persiana con su viejo interruptor. Todo esto con el menor presupuesto posible.
+This project uses a **NodeMCU ESP8266** and **Apple HomeKit** to control a blind.
 
-Los componentes utilizados fueron:
+## Motivation
+The objective of this project is to control an electric blind through HomeKit, but also keeping the manual use of the blind with its old switch. All this with the lowest possible budget.
+
+The components used were:
 - Board Nodemcu Wifi Esp8266.
 - 2 Channel Relay Module (Songle).
 - AC (220v) a 5v Power Supply.
-- Cables hembra-hembra y cables de 1 mm para las conexiones.
+- Famale-famale cables and 1mm cables for the electric connections.
 
-El siguiente diagrama muestra las conexiones electricas:
+The next diagram shows the electric connections:
 
 ![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/8a106cd5-d9b8-4e31-9b24-ae49c9776df9)
 
-## Configuración
-Los pines logicos utilizados en el **NodeMCU ESP8266** son:
-- **D1** (GPIO5) funcionando como *OUTPUT* y que activa y desactiva el relay para que la persiana baje.
-- **D2** (GPIO4) funcionando como *OUTPUT* y que activa y desactiva el relay para que la persiana suba.
-- **D6** (GPIO12) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia arriba.
-- **D7** (GPIO13) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia abajo.
+The logic pins used on the **NodeMCU ESP8266** were:
+- **D1** (GPIO5) working as *OUTPUT* and used to activate/desactivate the relay so that the blind goes down.
+- **D2** (GPIO4) working as *OUTPUT* and used to activate/desactivate the relay so that the blind goes up.
+- **D6** (GPIO12) working as *INPUT_PULLUP* and used to know when the physical switch is pulled down.
+- **D7** (GPIO13) working as *INPUT_PULLUP* and used to know when the physical switch is pulled up.
 
-## Instalación
-1. Descargar e instalar el [ch340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa.
-2. Descargar e instalar el [IDE de Arduino](https://www.arduino.cc/en/software).
-3. Agregar el ESP8266 al Boards Manager del IDE, en Preferences/Additional-Boards-Manager-URLs. Pegando el siguiente link: *http://arduino.esp8266.com/stable/package_esp8266com_index.json*.
-4. Descargar el ESP8266 desde el Boards Manager del IDE, en Tools/Board/Boards-Manager buscando ESP8266 e instalando la última version.
-5. Descargar la Library [Arduino-HomeKit-ESP8266](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266), e instalarla desde el IDE en Sketch/IncludeLibrary y seleccionando el .zip del repositorio descargado. Para una explicación de porque se usa el fork ir a la sección: [Aclaración](#aclaración).
+## Instalation
+1. Download and install the [ch340 driver](https://sparks.gogo.co.nz/ch340.html) required for the computer to recognize the board in Windows 10/11.
+2. Download and install the [Arduino IDE](https://www.arduino.cc/en/software).
+3. Add the *ESP8266* to the IDE **Boards Manager**, in *Preferences/Additional-Boards-Manager-URLs*. Pasting this link there: *http://arduino.esp8266.com/stable/package_esp8266com_index.json*.
+4. Download the *ESP8266* from the IDE **Boards Manager**, in *Tools/Board/Boards-Manager* searching for *ESP8266* and instaling the last version.
+5. Download the Library [Arduino-HomeKit-ESP8266](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266), and install it from the IDE in *Sketch/IncludeLibrary* selecting the .zip of the downloaded repository. For an explanation of why the fork is used go to the section: [Clarification](#clarification).
 
-## Edición del Código
-1. Dentro del archivo [wifi_info.h](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/wifi_info.h) cambiar la variable **ssid** por el nombre del wifi y la variable **password** por la contraseña del wifi.
-2. Modifique el `Serial.begin(9600)` dentro de [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino) con los BPS que usa su dispositivo, en el caso del NodeMCU ESP8266 este viene escrito es la parte trasera.
-3. Tal vez sea necesario invertir las señales enviadas a los relays para su correcto funcionamiento, en mi caso el relay se activa al enviarle una señal LOW, con otros relays puede ser al revés. Si es necesario se deberían modificar las funciones que interactuan con el motor, como `blind_motor_off()` dentro de [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino).
+## Code Editing
+1. Inside the file [wifi_info.h](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/wifi_info.h) change the variable **ssid** for the name of your WiFi and the variable **password** for your WiFi password.
+2. Modify the `Serial.begin(9600)` inside the file [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino) with the **BPS** that your device uses, in the case of the NodeMCU ESP8266 this is written on the back of the board.
+3. It may be necessary to invert the signals sent to the relays for their correct operation, in my case the relay is activated by sending a LOW signal, with other relays it can be the other way around. If necessary, the functions that interact with the motor should be modified, such as `blind_motor_off()` inside [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/ automatic_blinds/automatic_blinds.ino).
 
-## Settings importantes para modificar en el Arduino IDE
-- CPU Frequency: 160MHz (Obligatorio)
+## Important settings to modify in the Arduino IDE
+- CPU Frequency: 160MHz (Must)
 - Board/Module: Generic ESP8266 Module
-- Erase Flash: Only Sketch (Idealmente seleccionar *All Flash Contents* cuando se sube el código por primera vez)
+- Erase Flash: Only Sketch (ideally select *All Flash Contents* when uploading the code for the first time)
 - SSL Support: Basic SSL ciphers (lower ROM use)
 
-## Aclaración
-Se usa un [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) de la library original [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con los cambios propuestos en [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) y juntandolo con el cambio [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), está funcionando. 
+## Clarification
+A [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) of the original library [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266) is used, since with the changes proposed in [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) and coupled with this other change [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), it is working as intended.
 
-Si en un futuro actualizan el repositorio original, que por ahora parece deprecado, esto ya no importa. Al dia de hoy 26/7/2023 sin estos cambios no anda.
+If in the future they update the original repository, which for now seems deprecated, this no longer matters. As of today 7/26/2023 without these changes it does not work.
 
-## Bibliografía útil
-- [Para saber que pines se pueden utilizar en el NodeMCU ESP8266](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/).
-- [Para más información de como funciona el *INPUT_PULLUP*](https://aprendiendoarduino.wordpress.com/tag/input-pullup/).
+## Useful Bibliography
+- [To know which pins can be used in the NodeMCU ESP8266](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/).
+- [For more information on how *INPUT_PULLUP* works](https://aprendiendoarduino.wordpress.com/tag/input-pullup/) (Spanish source). 
 
-## Agradecimientos
+## Thanks
 - [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266)
 - [Arduino-ide](https://github.com/arduino/arduino-ide)
