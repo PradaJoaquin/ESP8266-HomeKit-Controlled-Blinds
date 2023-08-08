@@ -2,7 +2,7 @@
 
 [README Español](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/README-es.md)
 
-This project uses a **NodeMCU ESP8266** and **Apple HomeKit** to control a blind.
+This project uses a **NodeMCU ESP8266** and **Apple HomeKit** to control an electric blind.
 
 ## Motivation
 The objective of this project is to control an electric blind through HomeKit, but also keeping the manual use of the blind with its old switch. All this with the lowest possible budget.
