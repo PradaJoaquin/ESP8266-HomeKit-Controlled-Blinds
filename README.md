@@ -15,7 +15,7 @@ The components used were:
 
 The next diagram shows the electric connections:
 
-![Arduino diagram](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/8a6294e3-b405-49e8-b67d-5883f2174126)
+![Arduino diagram](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/5abb5107-fe2c-4866-ab92-2dfb93dbc56e)
 
 The logic pins used on the **NodeMCU ESP8266** were:
 - **D1** (GPIO5) working as *OUTPUT* and used to activate/desactivate the relay so that the blind goes down.
