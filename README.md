@@ -33,7 +33,7 @@ The logic pins used on the **NodeMCU ESP8266** were:
 ## Code Editing
 1. Inside the file [wifi_info.h](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/wifi_info.h) change the variable **ssid** for the name of your WiFi and the variable **password** for your WiFi password.
 2. Modify the `Serial.begin(9600)` inside the file [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino) with the **BPS** that your device uses, in the case of the NodeMCU ESP8266 this is written on the back of the board.
-3. It may be necessary to invert the signals sent to the relays for their correct operation, in my case the relay is activated by sending a LOW signal, with other relays it can be the other way around. If necessary, the functions that interact with the motor should be modified, such as `blind_motor_off()` inside [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/ automatic_blinds/automatic_blinds.ino).
+3. It may be necessary to invert the signals sent to the relays for their correct operation, in my case the relay is activated by sending a LOW signal, with other relays it can be the other way around. If necessary, the functions that interact with the motor should be modified, such as `blind_motor_off()` inside [automatic_blinds.ino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/blob/main/automatic_blinds/automatic_blinds.ino).
 
 ## Important settings to modify in the Arduino IDE
 - CPU Frequency: 160MHz (Must)
