@@ -13,7 +13,7 @@ Los componentes utilizados fueron:
 
 El siguiente diagrama muestra las conexiones eléctricas:
 
-![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/8a106cd5-d9b8-4e31-9b24-ae49c9776df9)
+![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/61c44ac4-8a59-4558-89a9-920e6d510845)
 
 ## Configuración
 Los pines logicos utilizados en el **NodeMCU ESP8266** son:
