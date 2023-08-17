@@ -41,6 +41,9 @@ The logic pins used on the **NodeMCU ESP8266** were:
 - Erase Flash: Only Sketch (ideally select *All Flash Contents* when uploading the code for the first time)
 - SSL Support: Basic SSL ciphers (lower ROM use)
 
+## Usage
+https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/d8f48e01-3661-4fa5-9850-3663dd14d2bd
+
 ## Clarification
 A [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) of the original library [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266) is used, since with the changes proposed in [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) and coupled with this other change [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), it is working as intended.
 
