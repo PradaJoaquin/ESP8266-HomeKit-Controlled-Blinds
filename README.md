@@ -10,7 +10,7 @@ The objective of this project is to control an electric blind through HomeKit, b
 The components used were:
 - Nodemcu Wifi Esp8266 Board.
 - 2 Channel Relay Module (Songle).
-- AC 220v to 5v Power Supply.
+- AC (220v) to 5v Power Supply.
 - Famale-Famale cables and 1mm cables for the electric connections.
 
 The next diagram shows the electric connections:
