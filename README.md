@@ -24,7 +24,7 @@ The logic pins used on the **NodeMCU ESP8266** were:
 - **D7** (GPIO13) working as *INPUT_PULLUP* and used to know when the physical switch is pulled up.
 
 ## Instalation
-1. Download and install the [ch340 driver](https://sparks.gogo.co.nz/ch340.html) required for the computer to recognize the board in Windows 10/11.
+1. Download and install the [CH340 driver](https://sparks.gogo.co.nz/ch340.html) required for the computer to recognize the board in Windows 10/11.
 2. Download and install the [Arduino IDE](https://www.arduino.cc/en/software).
 3. Add the *ESP8266* to the IDE **Boards Manager**, in *Preferences/Additional-Boards-Manager-URLs*. Pasting this link there: *http://arduino.esp8266.com/stable/package_esp8266com_index.json*.
 4. Download the *ESP8266* from the IDE **Boards Manager**, in *Tools/Board/Boards-Manager* searching for *ESP8266* and instaling the last version.
