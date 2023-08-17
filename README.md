@@ -8,10 +8,10 @@ This project uses a **NodeMCU ESP8266** and **Apple HomeKit** to control an elec
 The objective of this project is to control an electric blind through HomeKit, but also keeping the manual use of the blind with its old switch. All this with the lowest possible budget.
 
 The components used were:
-- Board Nodemcu Wifi Esp8266.
+- Nodemcu Wifi Esp8266 Board.
 - 2 Channel Relay Module (Songle).
-- AC (220v) a 5v Power Supply.
-- Famale-famale cables and 1mm cables for the electric connections.
+- AC 220v to 5v Power Supply.
+- Famale-Famale cables and 1mm cables for the electric connections.
 
 The next diagram shows the electric connections:
 
