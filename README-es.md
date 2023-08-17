@@ -6,9 +6,9 @@ Este proyecto usa un **NodeMCU ESP8266** y **Apple HomeKit** para controlar una 
 El objetivo del proyecto es poder controlar una persiana electrica a través de HomeKit, pero ademas manteniendo el uso manual de la persiana con su viejo interruptor. Todo esto con el menor presupuesto posible.
 
 Los componentes utilizados fueron:
-- Board Nodemcu Wifi Esp8266.
+- Nodemcu Wifi Esp8266 Board.
 - 2 Channel Relay Module (Songle).
-- AC (220v) a 5v Power Supply.
+- AC (220v) to 5v Power Supply.
 - Cables hembra-hembra y cables de 1mm para las conexiones eléctricas.
 
 El siguiente diagrama muestra las conexiones eléctricas:
@@ -39,6 +39,9 @@ Los pines logicos utilizados en el **NodeMCU ESP8266** son:
 - Board/Module: Generic ESP8266 Module
 - Erase Flash: Only Sketch (Idealmente seleccionar *All Flash Contents* cuando se sube el código por primera vez)
 - SSL Support: Basic SSL ciphers (lower ROM use)
+
+## Uso
+https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/d8f48e01-3661-4fa5-9850-3663dd14d2bd
 
 ## Aclaración
 Se usa un [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) de la library original [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con los cambios propuestos en [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) y juntandolo con el cambio [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), está funcionando. 
