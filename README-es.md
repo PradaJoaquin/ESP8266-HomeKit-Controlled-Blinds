@@ -23,7 +23,7 @@ Los pines logicos utilizados en el **NodeMCU ESP8266** son:
 - **D7** (GPIO13) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia arriba.
 
 ## Instalación
-1. Descargar e instalar el [ch340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa en windows 10/11.
+1. Descargar e instalar el [CH340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa en windows 10/11.
 2. Descargar e instalar el [IDE de Arduino](https://www.arduino.cc/en/software).
 3. Agregar el *ESP8266* al **Boards Manager** del IDE, en *Preferences/Additional-Boards-Manager-URLs*. Pegando ahí el siguiente link: *http://arduino.esp8266.com/stable/package_esp8266com_index.json*.
 4. Descargar el *ESP8266* desde el **Boards Manager** del IDE, en *Tools/Board/Boards-Manager* buscando *ESP8266* e instalando la última version.
