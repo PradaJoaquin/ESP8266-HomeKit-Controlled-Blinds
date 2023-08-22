@@ -6,14 +6,14 @@ Este proyecto usa un **NodeMCU ESP8266** y **Apple HomeKit** para controlar una 
 El objetivo del proyecto es poder controlar una persiana electrica a través de HomeKit, pero ademas manteniendo el uso manual de la persiana con su viejo interruptor. Todo esto con el menor presupuesto posible.
 
 Los componentes utilizados fueron:
-- Board Nodemcu Wifi Esp8266.
+- Nodemcu Wifi Esp8266 Board.
 - 2 Channel Relay Module (Songle).
-- AC (220v) a 5v Power Supply.
+- AC (220v) to 5v Power Supply.
 - Cables hembra-hembra y cables de 1mm para las conexiones eléctricas.
 
 El siguiente diagrama muestra las conexiones eléctricas:
 
-![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/8a106cd5-d9b8-4e31-9b24-ae49c9776df9)
+![Diagrama arduino](https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/61c44ac4-8a59-4558-89a9-920e6d510845)
 
 ## Configuración
 Los pines logicos utilizados en el **NodeMCU ESP8266** son:
@@ -23,7 +23,7 @@ Los pines logicos utilizados en el **NodeMCU ESP8266** son:
 - **D7** (GPIO13) funcionando como *INPUT_PULLUP* y que se usa para saber cuando el interruptor físico está activado hacia arriba.
 
 ## Instalación
-1. Descargar e instalar el [ch340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa en windows 10/11.
+1. Descargar e instalar el [CH340 driver](https://sparks.gogo.co.nz/ch340.html) necesario para que la computadora reconozca a la placa en windows 10/11.
 2. Descargar e instalar el [IDE de Arduino](https://www.arduino.cc/en/software).
 3. Agregar el *ESP8266* al **Boards Manager** del IDE, en *Preferences/Additional-Boards-Manager-URLs*. Pegando ahí el siguiente link: *http://arduino.esp8266.com/stable/package_esp8266com_index.json*.
 4. Descargar el *ESP8266* desde el **Boards Manager** del IDE, en *Tools/Board/Boards-Manager* buscando *ESP8266* e instalando la última version.
@@ -39,6 +39,9 @@ Los pines logicos utilizados en el **NodeMCU ESP8266** son:
 - Board/Module: Generic ESP8266 Module
 - Erase Flash: Only Sketch (Idealmente seleccionar *All Flash Contents* cuando se sube el código por primera vez)
 - SSL Support: Basic SSL ciphers (lower ROM use)
+
+## Uso
+https://github.com/PradaJoaquin/ESP8266-HomeKit-Controlled-Blinds/assets/36085103/d8f48e01-3661-4fa5-9850-3663dd14d2bd
 
 ## Aclaración
 Se usa un [fork](https://github.com/PradaJoaquin/Arduino-HomeKit-ESP8266) de la library original [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266), ya que con los cambios propuestos en [#212](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266/pull/212) y juntandolo con el cambio [#2](https://github.com/paullj1/Arduino-HomeKit-ESP8266/pull/2), está funcionando. 
