@@ -64,14 +64,14 @@ void cha_switch_on_setter(const homekit_value_t value) {
 void blind_motor_up() {
   // Invert this and all other digitalWrites to the relay if yours activates with HIGH intead of LOW.
   digitalWrite(PIN_BLIND_MOTOR_DOWN, HIGH);
-  delay(50);  // To make sure the other pin is OFF before chaging the other.
+  delay(50);  // To make sure the other pin is OFF before changing the other.
   digitalWrite(PIN_BLIND_MOTOR_UP, LOW);
 }
 
 void blind_motor_down() {
   // Invert this and all other digitalWrites to the relay if yours activates with HIGH intead of LOW.
   digitalWrite(PIN_BLIND_MOTOR_UP, HIGH);
-  delay(50);  // To make sure the other pin is OFF before chaging the other.
+  delay(50);  // To make sure the other pin is OFF before changing the other.
   digitalWrite(PIN_BLIND_MOTOR_DOWN, LOW);
 }
 
