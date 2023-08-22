@@ -10,12 +10,15 @@
 const char *ssid = "-----"; // Wifi name
 const char *password = "-----"; // Wifi password
 
-void wifi_connect() {
-	WiFi.persistent(false);
+void wifi_setup() {
+  WiFi.persistent(false);
 	WiFi.mode(WIFI_STA);
 	WiFi.setAutoReconnect(true);
 	WiFi.begin(ssid, password);
-	Serial.println("WiFi connecting...");
+  // wifi_debug(); // Uncomment this only to test the WiFi connection.
+}
+
+void wifi_debug() {
 	while (!WiFi.isConnected()) {
 		delay(100);
 		Serial.print(".");

@@ -6,7 +6,7 @@
 
 void setup() {
 	Serial.begin(9600); // Modify to the bps of your device
-	wifi_connect();
+	wifi_setup();
 	my_homekit_setup();
   pin_setup();
   // homekit_storage_reset(); // Uncomment this if you want to reset the device. As for pairing from another phone.
